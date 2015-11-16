@@ -1,3 +1,6 @@
+# PortCrew
+PortCrew tool v0.2 - Simple Port Scanner
+Author: Ayoub EDDARI a.eddari@mail.com
 <pre>
  |==============================================================|
  |                       _     ___                              |
@@ -8,12 +11,7 @@
  |       |_|                                      By: A.EDDARI  |
  |                                                Version : 0.2 |
  |==============================================================|
-</pre>
 
-# PortCrew
-PortCrew tool v0.2 - Simple Port Scanner
-Author: Ayoub EDDARI a.eddari@mail.com
-<pre>
 Targets:
      -t, --target    target IP address (e.g. '192.168.0.1')
 
