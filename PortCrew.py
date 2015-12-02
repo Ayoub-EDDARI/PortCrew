@@ -30,7 +30,6 @@ def usage():
     print """ 
 Targets:
      -t, --target    target IP address (e.g. '192.168.0.1')
-
 Others:
      -v, --version   show version
      -h, --help      show this help
@@ -71,29 +70,32 @@ if __name__ == "__main__":
 
 ip=0
 # Print Date & Time
-print bcolors.B +"Date & Time: "+ time.strftime('%d/%m/%Y %H:%M:%S') 
+print bcolors.YL + "[+] " + bcolors.B +"Date & Time: "+ time.strftime('%d/%m/%Y %H:%M:%S') 
 try:
 
-    print bcolors.R + "Scaning " + bcolors.G + add + bcolors.R + " ..."
+    print bcolors.YL + "[+] " + bcolors.R + "Scaning " + bcolors.G + add + bcolors.R + " ..."
     for port in range(0,65535):
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         result = sock.connect_ex( (add, port) )
         try:
             if result == 0:
-                print bcolors.W +"Port " + bcolors.R + str(port) + bcolors.G + " Open in " + bcolors.R + add
+                print bcolors.YL + "[+] " + bcolors.W +"Port " + bcolors.R + str(port) + bcolors.G + " Open in " + bcolors.R + add
                 ip = ip+1
             sock.close()
         except KeyboardInterrupt:
-            print "Bye! Quitting.."
+            print bcolors.YL + "[+] " +"Bye! Quitting.."
     if ip==0:
-	   print bcolors.G + " No Port open in " + bcolors.R + add
+       print bcolors.G + " No Port open in " + bcolors.R + add
     elif ip==1:
-	   print bcolors.G + " One Port open in " + bcolors.R + add
+       print bcolors.G + " One Port open in " + bcolors.R + add
     else :
-	   print bcolors.YL + " [" + str(ip) + "]" + bcolors.G + " Pors open " 
+       print bcolors.YL + " [" + str(ip) + "]" + bcolors.G + " Pors open " 
     end = time.time()
     diffTime = end - start
     print bcolors.B + "Completed in: " + bcolors.G +str(datetime.timedelta(seconds=diffTime)).split(".")[0]
 except KeyboardInterrupt:
     print bcolors.YL +"\nBye! Quitting.."
+    end = time.time()
+    diffTime = end - start
+    print bcolors.B + "Completed in: " + bcolors.G +str(datetime.timedelta(seconds=diffTime)).split(".")[0]
 sys.exit(0)
