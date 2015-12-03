@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 
 # -*- coding: utf-8 -*-
-
-# Basic Port Scanner
-##############################################################################
-#                                                                            #
-#                             By Ayoub EDDARI                                #
-#                                                                            #
-##############################################################################
+###########################################################################
+#           ____  _____  ____  ____  ___  ____  ____  _    _              #
+#          (  _ \(  _  )(  _ \(_  _)/ __)(  _ \( ___)( \/\/ )             #
+#           )___/ )(_)(  )   /  )( ( (__  )   / )__)  )    (              #
+#          (__)  (_____)(_)\_) (__) \___)(_)\_)(____)(__/\__)             #
+#              Basic Port Scanner       By Ayoub EDDARI                   #
+#                                                                         #
+###########################################################################
 
 # Disclaimer: Do Not Use this program for illegal purposes ;)
 
@@ -44,7 +45,7 @@ if __name__ == "__main__":
     
     if sys.argv[1:]:
         try:
-            optlist, args = getopt.getopt(sys.argv[1:], 'v:h:t', ["version","help","target="])
+            optlist, args = getopt.getopt(sys.argv[1:], 'v:h:t', ["version","help","target"])
         except getopt.GetoptError as err:
             # print help information and exit:
             print bcolors.R
